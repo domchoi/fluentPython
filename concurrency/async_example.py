@@ -28,7 +28,7 @@ def slow_function():
 def supervisor():
 	spinner = asyncio.async(spin('thinking'))
 	print('spinner object:', spinner)
-	result = slow_function()
+	result = yield from slow_function()
 	spinner.cancel()
 	return result
 
